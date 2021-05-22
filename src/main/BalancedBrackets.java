@@ -26,10 +26,15 @@ public class BalancedBrackets {
         for (char ch : str.toCharArray()) {
             if (ch == '[') {
                 brackets++;
-            } else if (ch == ']') {
-                brackets--;
+            } else if (ch == ']' ) {
+                if (brackets > 0) {
+                    brackets--;
+                } else {
+                    return false;
+                }
             }
         }
+        System.out.println(brackets);
         return brackets == 0;
     }
 }
